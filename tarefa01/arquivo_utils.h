@@ -26,5 +26,3 @@ void exibirNomes(const vector<string>& nomes);
  */
 void salvarNomesEmArquivo(const vector<string>& nomes, 
                          const string& nomeArquivoSaida);
-
-#endif
