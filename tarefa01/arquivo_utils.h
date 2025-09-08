@@ -3,6 +3,9 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
 
 /**
  * Função para ler nomes de um arquivo de texto
