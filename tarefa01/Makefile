@@ -1,7 +1,7 @@
 # Makefile para Tarefa 1 - OSA Lab01
 # Compilador e flags
 CXX = g++
-CXXFLAGS = -Wall -Wextra -std=c++17
+CXXFLAGS = -Wall -Wextra -std=c++23 -pedantic -errors
 
 # Nome do executável
 TARGET = programa
