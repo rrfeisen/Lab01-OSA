@@ -1,7 +1,4 @@
 #include "arquivo_utils.h"
-#include <iostream>
-#include <fstream>
-#include <iomanip>
 
 std::vector<std::string> lerNomesDoArquivo(const std::string& nomeArquivo) {
     std::vector<std::string> nomes;
