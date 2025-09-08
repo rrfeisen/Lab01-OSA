@@ -25,6 +25,6 @@ void exibirNomes(const vector<string>& nomes);
  * @param nomeArquivoSaida Nome do arquivo de saída
  */
 void salvarNomesEmArquivo(const vector<string>& nomes, 
-                         const stdstring& nomeArquivoSaida);
+                         const string& nomeArquivoSaida);
 
 #endif
