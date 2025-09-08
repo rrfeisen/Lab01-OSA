@@ -1,24 +1,24 @@
 #include "arquivo_utils.h"
 
-std::vector<std::string> lerNomesDoArquivo(const std::string& nomeArquivo) {
-    std::vector<std::string> nomes;
-    std::ifstream arquivo(nomeArquivo);
+vector<string> lerNomesDoArquivo(const string& nomeArquivo) {
+    vector<string> nomes;
+    ifstream arquivo(nomeArquivo);
     
     if (!arquivo.is_open()) {
-        std::cerr << "Erro ao abrir o arquivo: " << nomeArquivo << std::endl;
+        cerr << "Erro ao abrir o arquivo: " << nomeArquivo << endl;
         return nomes;
     }
     
-    std::string linha;
-    while (std::getline(arquivo, linha)) {
+    string linha;
+    while (getline(arquivo, linha)) {
         // Remove espaços em branco no início e fim da linha
         size_t inicio = linha.find_first_not_of(" \t");
-        if (inicio == std::string::npos) {
+        if (inicio == string::npos) {
             continue; // Linha vazia ou só com espaços
         }
         
         size_t fim = linha.find_last_not_of(" \t");
-        std::string nome = linha.substr(inicio, fim - inicio + 1);
+        string nome = linha.substr(inicio, fim - inicio + 1);
         
         if (!nome.empty()) {
             nomes.push_back(nome);
@@ -26,40 +26,40 @@ std::vector<std::string> lerNomesDoArquivo(const std::string& nomeArquivo) {
     }
     
     arquivo.close();
-    std::cout << "Arquivo lido com sucesso! Total de nomes: " << nomes.size() << std::endl;
+    cout << "Arquivo lido com sucesso! Total de nomes: " << nomes.size() << endl;
     return nomes;
 }
 
-void exibirNomes(const std::vector<std::string>& nomes) {
-    std::cout << std::endl;
-    std::cout << std::setfill('=') << std::setw(40) << "" << std::endl;
-    std::cout << std::setfill(' ') << std::setw(20) << "LISTA DE NOMES" << std::endl;
-    std::cout << std::setfill('=') << std::setw(40) << "" << std::endl;
-    std::cout << std::setfill(' ');
+void exibirNomes(const vector<string>& nomes) {
+    cout << endl;
+    cout << setfill('=') << setw(40) << "" << endl;
+    cout << setfill(' ') << setw(20) << "LISTA DE NOMES" << endl;
+    cout << setfill('=') << setw(40) << "" << endl;
+    cout << setfill(' ');
     
     for (size_t i = 0; i < nomes.size(); ++i) {
-        std::cout << std::setw(3) << std::right << (i + 1) 
-                  << ". " << std::setw(15) << std::left << nomes[i] << std::endl;
+        cout << setw(3) << right << (i + 1) 
+                  << ". " << setw(15) << left << nomes[i] << endl;
     }
     
-    std::cout << std::setfill('=') << std::setw(40) << "" << std::endl;
-    std::cout << std::setfill(' ') << "Total: " << nomes.size() << " nomes" << std::endl;
-    std::cout << std::endl;
+    cout << setfill('=') << setw(40) << "" << endl;
+    cout << setfill(' ') << "Total: " << nomes.size() << " nomes" << endl;
+    cout << endl;
 }
 
-void salvarNomesEmArquivo(const std::vector<std::string>& nomes, 
-                         const std::string& nomeArquivoSaida) {
-    std::ofstream arquivo(nomeArquivoSaida);
+void salvarNomesEmArquivo(const vector<string>& nomes, 
+                         const string& nomeArquivoSaida) {
+    ofstream arquivo(nomeArquivoSaida);
     
     if (!arquivo.is_open()) {
-        std::cerr << "Erro ao criar o arquivo de saída: " << nomeArquivoSaida << std::endl;
+        cerr << "Erro ao criar o arquivo de saída: " << nomeArquivoSaida << endl;
         return;
     }
     
-    for (const std::string& nome : nomes) {
-        arquivo << nome << std::endl;
+    for (const string& nome : nomes) {
+        arquivo << nome << endl;
     }
     
     arquivo.close();
-    std::cout << "Dados salvos com sucesso no arquivo: " << nomeArquivoSaida << std::endl;
+    cout << "Dados salvos com sucesso no arquivo: " << nomeArquivoSaida << endl;
 }
