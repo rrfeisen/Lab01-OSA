@@ -1,9 +1,5 @@
 
-#include <iostream>
-#include <vector>
-#include <string>
 #include "arquivo_utils.h"
-using namespace std;
 int main() {
     // Nome dos arquivos de entrada e saída
     const string arquivoEntrada = "Arquivo_Nomes.txt";
