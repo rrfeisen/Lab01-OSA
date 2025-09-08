@@ -6,7 +6,7 @@
 using namespace std;
 int main() {
     // Nome dos arquivos de entrada e saída
-    const string arquivoEntrada = "nomes.txt";
+    const string arquivoEntrada = "Arquivo_Nomes.txt";
     const string arquivoSaida = "nomes_saida.txt";
     
     cout << "=== TAREFA 1: LEITURA DE ARQUIVO COM REGISTROS SIMPLES ===" << endl;
