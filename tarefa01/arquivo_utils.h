@@ -1,12 +1,11 @@
-#ifndef ARQUIVO_UTILS_H
-#define ARQUIVO_UTILS_H
+#pragma once
 
 #include <vector>
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-
+using namespace std;
 /**
  * Função para ler nomes de um arquivo de texto
  * @param nomeArquivo Nome do arquivo a ser lido
