@@ -32,19 +32,15 @@ vector<string> lerNomesDoArquivo(const string& nomeArquivo) {
 
 void exibirNomes(const vector<string>& nomes) {
     cout << endl;
-    cout << setfill('=') << setw(40) << "" << endl;
-    cout << setfill(' ') << setw(20) << "LISTA DE NOMES" << endl;
-    cout << setfill('=') << setw(40) << "" << endl;
-    cout << setfill(' ');
+    cout << "LISTA DE NOMES" << endl;
+    cout << "==============" << endl;
     
     for (size_t i = 0; i < nomes.size(); ++i) {
-        cout << setw(3) << right << (i + 1) 
-                  << ". " << setw(15) << left << nomes[i] << endl;
+        cout << (i + 1) << ". " << nomes[i] << endl;
     }
     
-    cout << setfill('=') << setw(40) << "" << endl;
-    cout << setfill(' ') << "Total: " << nomes.size() << " nomes" << endl;
     cout << endl;
+    cout << "Total: " << nomes.size() << " nomes" << endl;
 }
 
 void salvarNomesEmArquivo(const vector<string>& nomes, 
