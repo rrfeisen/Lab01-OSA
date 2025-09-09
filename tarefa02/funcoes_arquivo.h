@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <string>
-#include "Pessoa.h"
+#include "pessoa.h"
 using namespace std;
 
 // Função para ler o arquivo CSV e retornar vetor de pessoas
