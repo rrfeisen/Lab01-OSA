@@ -1,4 +1,4 @@
-#include "ArquivoUtils.h"
+#include "funcoes_arquivo.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>
