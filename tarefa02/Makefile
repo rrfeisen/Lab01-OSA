@@ -1,19 +1,35 @@
+# Makefile para Tarefa 2 - OSA Lab01
+# Compilador e flags
 CXX = g++
-CXXFLAGS = -Wall -std=c++11
+CXXFLAGS = -Wall -Wextra -std=c++23 -pedantic-errors
 
-all: programa
+# Nome do executável
+TARGET = programa
 
-programa: main.o pessoa.o
-	$(CXX) $(CXXFLAGS) -o programa main.o pessoa.o
+# Arquivos fonte
+SOURCES = main.cpp pessoa.cpp
 
-main.o: main.cpp pessoa.hpp
-	$(CXX) $(CXXFLAGS) -c main.cpp
+# Arquivos objeto
+OBJECTS = $(SOURCES:.cpp=.o)
 
-pessoa.o: pessoa.cpp pessoa.hpp
-	$(CXX) $(CXXFLAGS) -c pessoa.cpp
+# Alvo padrão
+all: $(TARGET)
 
-run: programa
-	./programa
+# Compilação do executável
+$(TARGET): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS)
 
+# Compilação dos arquivos objeto
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Execução do programa
+run: $(TARGET)
+	./$(TARGET)
+
+# Limpeza dos arquivos gerados
 clean:
-	rm -f *.o programa
+	rm -f $(OBJECTS) $(TARGET)
+
+# Declaração de alvos que não são arquivos
+.PHONY: all run clean
